@@ -10,7 +10,7 @@ const AnimeListComponent = ({animeList, loadMore}) => {
         data={animeList.Page.media}
         keyExtractor={(item) => item.id.toString()}
         onEndReached={loadMore}
-        renderItem={({item}) => <Anime title={item.title.userPreferred}/>}
+        renderItem={({item}) => <Anime coverImage={item.coverImage.large} title={item.title.userPreferred}/>}
     />
 };
 

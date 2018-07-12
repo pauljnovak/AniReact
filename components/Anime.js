@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import { Text } from 'react-native';
+import { View,Text, Image } from 'react-native';
 
-export default Anime = ({title}) => {
-        return <Text>{title}</Text>
+export default Anime = ({title, coverImage}) => {
+        //return
+    return <View><Image style={{width:200,height:200}} source={{uri:coverImage}}/><Text>{title}</Text></View>
 }

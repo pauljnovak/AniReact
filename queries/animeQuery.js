@@ -12,6 +12,9 @@ export default ANIME_QUERY = gql`
       title {
         userPreferred
       }
+      coverImage {
+        large
+      }
     }
   }
 }
