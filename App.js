@@ -1,24 +1,22 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { ApolloProvider } from 'react-apollo';
+import { ApolloClient, InMemoryCache  } from 'apollo-boost'
+import { createHttpLink } from 'apollo-link-http'
+import AnimeList from './components/AnimeList'
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.text}>Hello from React Native!</Text>
-      </View>
-    );
-  }
+const httpLink = new createHttpLink({ uri: 'https://graphql.anilist.co', useGETForQueries: false });
+const client = new ApolloClient({
+    link: httpLink,
+    cache: new InMemoryCache()
+})
+
+
+export default class App extends Component {
+    render() {
+        return (
+            <ApolloProvider client={client}>
+              <AnimeList />
+            </ApolloProvider>
+        );
+    }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#000000',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  text: {
-      color: '#ffffff'
-  }
-});
