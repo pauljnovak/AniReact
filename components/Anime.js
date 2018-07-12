@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import { Text } from 'react-native';
 
-export default class Anime extends Component {
-    render() {
-        return <Text>{this.props.title}</Text>
-    }
+export default Anime = ({title}) => {
+        return <Text>{title}</Text>
 }

@@ -3,6 +3,7 @@ import { ApolloProvider } from 'react-apollo';
 import { ApolloClient, InMemoryCache  } from 'apollo-boost'
 import { createHttpLink } from 'apollo-link-http'
 import AnimeList from './components/AnimeList'
+import ANIME_QUERY from './queries/animeQuery'
 
 const httpLink = new createHttpLink({ uri: 'https://graphql.anilist.co', useGETForQueries: false });
 const client = new ApolloClient({
@@ -15,7 +16,7 @@ export default class App extends Component {
     render() {
         return (
             <ApolloProvider client={client}>
-              <AnimeList />
+              <AnimeList query={ANIME_QUERY}/>
             </ApolloProvider>
         );
     }
