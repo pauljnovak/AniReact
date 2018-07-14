@@ -1,16 +1,21 @@
 import React, {Component} from 'react';
-import {FlatList, Text} from 'react-native';
+import {FlatList, Text, StyleSheet} from 'react-native';
 import Anime from './Anime';
 import {Query} from 'react-apollo'
 
-
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor: 'black'
+    }
+});
 const AnimeListComponent = ({animeList, loadMore}) => {
 
     return <FlatList
+        style={styles.container}
         data={animeList.Page.media}
         keyExtractor={(item) => item.id.toString()}
         onEndReached={loadMore}
-        renderItem={({item}) => <Anime coverImage={item.coverImage.large} title={item.title.userPreferred}/>}
+        renderItem={({item}) => <Anime coverImage={item.coverImage.large} title={item.title.userPreferred} description={item.description}/>}
     />
 };
 

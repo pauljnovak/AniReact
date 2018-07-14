@@ -15,6 +15,7 @@ export default ANIME_QUERY = gql`
       coverImage {
         large
       }
+      description
     }
   }
 }
