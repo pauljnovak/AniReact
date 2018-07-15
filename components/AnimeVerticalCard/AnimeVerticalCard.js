@@ -13,7 +13,7 @@ export default Anime = ({title, coverImage, description, averageScore, episodes,
                 <Text style={styles.animeH1}>Episodes: {episodes}</Text>
                 <View style={styles.animeGenreWrapper}>
                 {
-                    genres.map((genre) => { return <View style={styles.animeGenre}><Text key={genre+new Date()} style={styles.animeGenreText}>{genre}</Text></View>})
+                    genres.map((genre) => { return <View key={genre+new Date()} style={styles.animeGenre}><Text style={styles.animeGenreText}>{genre}</Text></View>})
                 }
                 </View>
             </View>
