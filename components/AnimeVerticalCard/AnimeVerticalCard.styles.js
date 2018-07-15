@@ -1,14 +1,20 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Dimensions } from 'react-native'
+
+const screenWidth = Dimensions.get('window').width;
+const cardMargin = 10;
+const cardPadding = 10;
+const colSpace = 20;
+const colWidth = (screenWidth - 2*cardMargin - 2*cardPadding - colSpace)/2;
 
 export default StyleSheet.create({
     coverImage: {
-        width: 225 / 1.5,
-        height: 335 / 1.5
+        width: colWidth ,
+        height: colWidth * 1.5
     },
     animeContainer: {
         backgroundColor: '#1F1F1F',
-        margin: 10,
-        padding: 10,
+        margin: cardMargin,
+        padding: cardPadding,
         borderRadius: 10,
     },
     animeTitle: {
@@ -47,10 +53,10 @@ export default StyleSheet.create({
         flexDirection:'row',
         marginTop: 10,
         flexWrap: 'wrap',
-        width: 150
+        width: colWidth
     },
     animeInfoRightCol: {
-        marginLeft: 20
+        marginLeft: colSpace
     }
 
 });
