@@ -7,7 +7,7 @@ export default ANIME_QUERY = gql`
       currentPage
       hasNextPage
     }
-    media {
+    media (type: ANIME){
       id
       title {
         userPreferred
@@ -16,6 +16,9 @@ export default ANIME_QUERY = gql`
         large
       }
       description
+      episodes
+      averageScore
+      genres
     }
   }
 }
