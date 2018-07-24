@@ -1,7 +1,8 @@
-import React, {Component} from 'react';
-import { Text } from 'react-native';
+import React, {Component} from 'react'
+import { Text } from 'react-native'
 import {Query} from 'react-apollo'
 import AnimeVerticalList from '../AnimeVerticalList/AnimeVerticalList'
+import AnimeHorizontalList from '../AnimeHorizontalList/AnimeHorizontalList'
 
 const animeVerticalList = ({data, fetchMore}) => <AnimeVerticalList loadMore={() =>
     fetchMore({
@@ -30,7 +31,7 @@ export default AnimeList = ({query, orientation}) => {
         {({loading, error, data, fetchMore}) => {
             if (loading) return <Text>Loading...</Text>
             if (error) return <Text>{error.message}</Text>
-            return orientation === 'vertical' ? animeVerticalList({data, fetchMore}) : null
+            return orientation === 'vertical' ? animeVerticalList({data, fetchMore}) : <AnimeHorizontalList animeList={data}/>
         }}
     </Query>
 }
