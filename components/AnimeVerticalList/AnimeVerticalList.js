@@ -3,7 +3,30 @@ import {FlatList} from 'react-native';
 import Anime from '../AnimeVerticalCard/AnimeVerticalCard';
 import styles from './AnimeVerticalList.styles'
 
-export default AnimeVerticalList = ({animeList, loadMore}) => {
+
+
+
+const AnimeVerticalList = ({animeList, fetchMore}) => {
+
+    let loadMore = () => fetchMore({
+            variables: {
+                page: data.Page.pageInfo.currentPage + 1
+            },
+            updateQuery: (prev, {fetchMoreResult}) => {
+                if(prev.Page.pageInfo.currentPage === fetchMoreResult.Page.pageInfo.currentPage) return prev;
+                return {
+                    Page: {
+                        __typename: prev.Page.__typename,
+                        pageInfo: {
+                            currentPage: fetchMoreResult.Page.pageInfo.currentPage,
+                            hasNextPage: fetchMoreResult.Page.pageInfo.hasNextPage,
+                            __typename: prev.Page.pageInfo.__typename
+                        },
+                        media: [...prev.Page.media,...fetchMoreResult.Page.media]
+                    }
+                };
+            }
+        });
 
     return <FlatList
         style={styles.container}
@@ -22,3 +45,5 @@ export default AnimeVerticalList = ({animeList, loadMore}) => {
     />
 };
 
+const AnimeVerticalList = ({data, fetchMore}) => <AnimeVerticalList 
+ animeList={data}/>
