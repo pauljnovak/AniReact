@@ -6,7 +6,7 @@ import styles from './AnimeVerticalList.styles'
 
 
 
-const AnimeVerticalList = ({animeList, fetchMore}) => {
+export default AnimeVerticalList = ({animeList, fetchMore}) => {
 
     let loadMore = () => fetchMore({
             variables: {
@@ -44,6 +44,3 @@ const AnimeVerticalList = ({animeList, fetchMore}) => {
             />}
     />
 };
-
-const AnimeVerticalList = ({data, fetchMore}) => <AnimeVerticalList 
- animeList={data}/>

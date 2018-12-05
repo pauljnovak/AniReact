@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {FlatList, View} from 'react-native';
 import AnimeCategory from '../AnimeCategory/AnimeCategory';
 
-export default AnimeHorizontalList = ({categories}) => {
+export default AnimeCategoryList = ({categories}) => {
 
     return <View><FlatList
         data={categories}
