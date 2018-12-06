@@ -33,6 +33,10 @@
     "react": "16.3.1",
     "react-apollo": "^2.1.9",
     "react-native": "~0.55.2",
-    "react-navigation": "2.0.1"
+    "react-native-paper": "^2.2.8",
+    "react-native-vector-icons": "*",
+    "react-navigation": "2.0.1",
+    "react-navigation-material-bottom-tabs": "^1.0.0",
+    "react-navigation-tabs": "1.0.0"
   }
 }
