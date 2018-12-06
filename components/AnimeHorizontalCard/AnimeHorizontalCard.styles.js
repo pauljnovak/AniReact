@@ -1,12 +1,12 @@
-import { StyleSheet, Dimensions } from 'react-native'
+import {StyleSheet, Dimensions} from 'react-native';
 
 const screenWidth = Dimensions.get('window').width;
-const colWidth = screenWidth/4;
+const colWidth = screenWidth / 4;
 
 export default StyleSheet.create({
-    coverImage: {
-        width: colWidth ,
-        height: colWidth * 1.5
-    }
+  coverImage: {
+    width: colWidth,
+    height: colWidth * 1.5,
+  },
 
 });
