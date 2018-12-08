@@ -28,7 +28,7 @@ class Home extends React.Component {
   
   class Library extends React.Component {
     static navigationOptions = {
-      tabBarIcon: tabBarIcon('list'),
+      tabBarIcon: tabBarIcon('subject'),
     };
   
     render() {
