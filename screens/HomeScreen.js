@@ -3,9 +3,8 @@ import { View } from 'react-native'
 import { ApolloProvider } from 'react-apollo';
 import { ApolloClient, InMemoryCache  } from 'apollo-boost'
 import { createHttpLink } from 'apollo-link-http'
-import AnimeCategoryList from './components/AnimeCategoryList/AnimeCategoryList';
-import ANIME_QUERY from './queries/animeQuery'
-import BottomNavigation from './navigation/BottomNavigation'
+import AnimeCategoryList from '../components/AnimeCategoryList/AnimeCategoryList';
+import ANIME_QUERY from '../queries/animeQuery'
 
 const httpLink = new createHttpLink({ uri: 'https://graphql.anilist.co', useGETForQueries: false });
 const client = new ApolloClient({
@@ -23,7 +22,7 @@ const categories = [
 
 ];
 
-/*export default class App extends Component {
+export default class Home extends Component {
     render() {
         return (
             <View style={{backgroundColor:'black', flex: 1, justifyContent: 'center'}}>
@@ -33,11 +32,4 @@ const categories = [
             </View>
         );
     }
-};*/
-export default class App extends Component {
-    render() {
-        return (
-            <BottomNavigation/>
-        );
-    }
-}
+};

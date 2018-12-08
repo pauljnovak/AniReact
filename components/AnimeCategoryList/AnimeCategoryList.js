@@ -7,7 +7,6 @@ const AnimeCategoryList = ({categories}) => {
     data={categories}
     keyExtractor={(category) => category.categoryName}
     renderItem={(category) => {
-      console.log(category.item);
       return <AnimeCategory query={category.item.query}
                             categoryName={category.item.categoryName}
       />;

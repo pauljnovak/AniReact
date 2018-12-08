@@ -34,9 +34,11 @@
     "react-apollo": "^2.1.9",
     "react-native": "~0.55.2",
     "react-native-paper": "^2.2.8",
+    "react-native-screens": "^1.0.0-alpha.17",
     "react-native-vector-icons": "*",
-    "react-navigation": "2.0.1",
-    "react-navigation-material-bottom-tabs": "^1.0.0",
-    "react-navigation-tabs": "1.0.0"
+    "react-navigation": "2.1.0",
+    "react-navigation-fluid-transitions": "^0.2.73",
+    "react-navigation-material-bottom-tabs": "0.4.0",
+    "react-navigation-tabs": "0.5.1"
   }
 }
