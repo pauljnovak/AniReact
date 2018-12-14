@@ -4,7 +4,11 @@ import { ApolloProvider } from 'react-apollo';
 import { ApolloClient, InMemoryCache  } from 'apollo-boost'
 import { createHttpLink } from 'apollo-link-http'
 import AnimeCategoryList from '../components/AnimeCategoryList/AnimeCategoryList';
-import ANIME_QUERY from '../queries/animeQuery'
+import animePopularThisSeasonList from '../queries/animePopularThisSeasonListQuery';
+import animeTopScoreListQuery from '../queries/animeTopScoreListQuery';
+import animePopularListQuery from '../queries/animePopularListQuery';
+import animeTrendingListQuery from '../queries/animeTrendingListQuery';
+ 
 
 const httpLink = new createHttpLink({ uri: 'https://graphql.anilist.co', useGETForQueries: false });
 const client = new ApolloClient({
@@ -13,12 +17,10 @@ const client = new ApolloClient({
 });
 
 const categories = [
-    { query:ANIME_QUERY, categoryName:'Category1' },
-    { query:ANIME_QUERY, categoryName:'Category2' },
-    { query:ANIME_QUERY, categoryName:'Category3' },
-    { query:ANIME_QUERY, categoryName:'Category4' },
-    { query:ANIME_QUERY, categoryName:'Category5' },
-    { query:ANIME_QUERY, categoryName:'Category6' }
+    { query:animePopularThisSeasonList, categoryName:'Popular this season' },
+    { query:animeTopScoreListQuery, categoryName: 'Top Score' },
+    { query:animePopularListQuery, categoryName: 'Popular'},
+    { query:animeTrendingListQuery, categoryName: 'Trending'}
 
 ];
 

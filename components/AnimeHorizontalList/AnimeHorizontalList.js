@@ -1,6 +1,6 @@
 import React from 'react';
 import {FlatList, View} from 'react-native';
-import Anime from '../AnimeHorizontalCard/AnimeHorizontalCard';
+import AnimeHorizontalCard from '../AnimeHorizontalCard/AnimeHorizontalCard';
 import styles from '../AnimeHorizontalList/AnimeHorizonalList.styles';
 
 const AnimeHorizontalList = ({animeList}) => {
@@ -9,8 +9,8 @@ const AnimeHorizontalList = ({animeList}) => {
     keyExtractor={(item) => item.id.toString()}
     horizontal
     ItemSeparatorComponent={() => <View style={{width: 5}}/>}
-    renderItem={({item}) =>
-      <Anime coverImage={item.coverImage.large}/>
+    renderItem={({item}) => <AnimeHorizontalCard coverImage={item.coverImage.medium}/>
+    
     }
   /></View>;
 };

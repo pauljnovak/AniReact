@@ -7,6 +7,7 @@ import styles from './AnimeCategory.styles'
 const AnimeCategory = ({query, categoryName}) => {
   return <View>
     <Text style={styles.categoryText}>{categoryName}</Text>
+    <Text style={styles.categoryText}>see more</Text>
     <AnimeList query={query} orientation='horizontal'/>
   </View>
 };
