@@ -1,21 +1,20 @@
 import React from 'react';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
+import HomeOnScreenNavigation from './HomeOnScreenNavigation';
 import HomeScreen from '../screens/HomeScreen';
 import SearchScreen from '../screens/SearchScreen';
 import LibraryScreen from '../screens/LibraryScreen'
 import tabBarIcon from './tabBarIcon';
 
-
 class Home extends React.Component {
-    static navigationOptions = {
-      tabBarIcon: tabBarIcon('home'),
-    };
-  
-    render() {
-      return <HomeScreen />;
-    }
+  static navigationOptions = {
+    tabBarIcon: tabBarIcon('home'),
+  };
+  static router = HomeOnScreenNavigation.router;
+  render() {
+    return <HomeOnScreenNavigation navigation={this.props.navigation}/>;
   }
-  
+}
   class Search extends React.Component {
     static navigationOptions = {
       tabBarIcon: tabBarIcon('search'),
@@ -46,6 +45,7 @@ const BottomNavigation = createMaterialBottomTabNavigator({
         activeColor: '#ffffff',
         inactiveColor: '#9b9b9b',
         barStyle: { backgroundColor: '#1F1F1F' },
+        backBehavior: "initialRoute"
     });
 
 export default BottomNavigation;

@@ -1,5 +1,15 @@
 {
   "expo": {
-    "sdkVersion": "27.0.0"
+    "sdkVersion": "27.0.0",
+    "androidStatusBar": {
+      "backgroundColor": "#000000"
+    },
+    "android": {
+      "package": "com.pauljnovak.anireact",
+      "versionCode": 1,
+      "permissions": [],
+      "icon": "./aniReactIcon.png"
+    }
   }
+
 }

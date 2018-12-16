@@ -2,28 +2,35 @@ import React from 'react';
 import {Image, Text, View} from 'react-native';
 import styles from './AnimeVerticalCard.styles';
 
-const Anime = ({title, coverImage, description, averageScore, episodes, genres}) => {
-  return <View style={styles.animeContainer}>
-    <View style={styles.animeHeader}>
-      <Image style={styles.coverImage}
-             source={{uri: coverImage}}
-      />
-      <View style={styles.animeInfoRightCol}>
-        <Text style={styles.animeH1}>Score: {averageScore}</Text>
-        <Text style={styles.animeH1}>Episodes: {episodes}</Text>
-        <View style={styles.animeGenreWrapper}>
-          {
-            genres.map((genre) => {
-              return <View key={genre + new Date()}
-                           style={styles.animeGenre}
-              ><Text style={styles.animeGenreText}>{genre}</Text></View>;
-            })
-          }
+class Anime extends React.PureComponent {
+  shouldComponentUpdate(){
+    return false;
+  }
+  render() {
+    let {title, coverImage, description, averageScore, episodes, genres} = this.props;
+    return <View style={styles.animeContainer}>
+      <View style={styles.animeHeader}>
+        <Image style={styles.coverImage}
+              source={{uri: coverImage}}
+        />
+        <View style={styles.animeInfoRightCol}>
+          <Text style={styles.animeH1}>Score: {averageScore}</Text>
+          <Text style={styles.animeH1}>Episodes: {episodes}</Text>
+          <View style={styles.animeGenreWrapper}>
+            {
+              genres.map((genre) => {
+                return <View key={genre + new Date()}
+                            style={styles.animeGenre}
+                ><Text style={styles.animeGenreText}>{genre}</Text></View>;
+              })
+            }
+          </View>
         </View>
       </View>
-    </View>
-    <Text style={styles.animeH1}>{title}</Text>
-    <Text style={styles.animeDescription}>{description}</Text>
-  </View>;
+      <Text style={styles.animeH1}>{title}</Text>
+      <Text style={styles.animeDescription}>{description}</Text>
+    </View>;
+  }
+  
 };
 export default Anime;
